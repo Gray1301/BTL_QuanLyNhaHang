@@ -98,7 +98,7 @@ namespace BTL_Nhom11
             var CTHD = (from C in db.ChiTietHoaDons
                        select new { C.ma_hd, C.ma_sp, C.SoLuong }).ToList();
             var x = CTHD.Max(s=>s.ma_hd);
-            MessageBox.Show(x.ToString());
+           // MessageBox.Show(x.ToString());
            dataGridView1.DataSource = (from c in CTHD where(c.ma_hd == x) 
                                       select new { c.ma_hd, c.ma_sp, c.SoLuong }).ToList();
         }

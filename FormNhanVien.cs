@@ -171,9 +171,17 @@ namespace BTL_Nhom11
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
             HienThiBan();
+            this.KeyPreview = true;
+            this.KeyDown += Form1_KeyDown;
 
         }
-
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button2_Click_2(sender, e);
+            }
+        }
         private void lvBan_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -508,6 +516,31 @@ namespace BTL_Nhom11
         {
             FormKhangHang quanlykhachhang = new FormKhangHang();
             quanlykhachhang.ShowDialog();
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            string sdt = txtTimKhach.Text;
+            using (QlNhaHang db = new QlNhaHang())
+            {
+                var dsKH = db.KhachHangs.Where(kh => kh.sdt.Contains(sdt))
+                    .Select(kh => new {
+                        ma_kh = kh.ma_kh, ho_ten = kh.ho_ten, sdt = kh.sdt
+                    }).FirstOrDefault();
+                txtTenKhach.Text = dsKH.ho_ten;
+                txtSDT.Text = dsKH.sdt;
+                //dtgvKH.DataSource = dsKH;
+            }
+        }
+
+        private void txtTimKhach_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

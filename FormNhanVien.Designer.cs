@@ -36,9 +36,9 @@ namespace BTL_Nhom11
             this.bànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bànToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lvBan = new System.Windows.Forms.ListView();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnHD = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -53,7 +53,9 @@ namespace BTL_Nhom11
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenban = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTimKhach = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -67,8 +69,8 @@ namespace BTL_Nhom11
             this.sảnPhẩmToolStripMenuItem,
             this.hóaĐơnToolStripMenuItem,
             this.bànToolStripMenuItem1,
-            this.đăngXuấtToolStripMenuItem,
-            this.kháchHàngToolStripMenuItem});
+            this.kháchHàngToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1030, 37);
@@ -129,6 +131,15 @@ namespace BTL_Nhom11
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click_2);
             // 
+            // kháchHàngToolStripMenuItem
+            // 
+            this.kháchHàngToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kháchHàngToolStripMenuItem.Image = global::BTL_Nhom11.Properties.Resources.customer_icon_vector_male_person_profile_avatar_symbol_shopping_glyph_pictogram_illustration_150310785;
+            this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(161, 33);
+            this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
+            this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click_1);
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -161,19 +172,9 @@ namespace BTL_Nhom11
             this.lvBan.SelectedIndexChanged += new System.EventHandler(this.lvBan_SelectedIndexChanged_1);
             this.lvBan.Click += new System.EventHandler(this.lvBan_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(821, 408);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 40);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Thêm Khách Hàng";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // btnHD
             // 
-            this.btnHD.Location = new System.Drawing.Point(656, 408);
+            this.btnHD.Location = new System.Drawing.Point(649, 489);
             this.btnHD.Name = "btnHD";
             this.btnHD.Size = new System.Drawing.Size(130, 40);
             this.btnHD.TabIndex = 27;
@@ -183,7 +184,7 @@ namespace BTL_Nhom11
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(465, 408);
+            this.button1.Location = new System.Drawing.Point(454, 489);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 40);
             this.button1.TabIndex = 26;
@@ -329,14 +330,34 @@ namespace BTL_Nhom11
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên bàn";
             // 
-            // kháchHàngToolStripMenuItem
+            // label6
             // 
-            this.kháchHàngToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kháchHàngToolStripMenuItem.Image = global::BTL_Nhom11.Properties.Resources.customer_icon_vector_male_person_profile_avatar_symbol_shopping_glyph_pictogram_illustration_150310785;
-            this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(161, 33);
-            this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
-            this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click_1);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(466, 428);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(203, 29);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Tìm khách theo SĐT";
+            this.label6.Click += new System.EventHandler(this.label6_Click_1);
+            // 
+            // txtTimKhach
+            // 
+            this.txtTimKhach.Location = new System.Drawing.Point(774, 435);
+            this.txtTimKhach.Name = "txtTimKhach";
+            this.txtTimKhach.Size = new System.Drawing.Size(216, 22);
+            this.txtTimKhach.TabIndex = 29;
+            this.txtTimKhach.TextChanged += new System.EventHandler(this.txtTimKhach_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1008, 554);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(10, 10);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
             // 
             // FormNhanVien
             // 
@@ -344,6 +365,8 @@ namespace BTL_Nhom11
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1030, 576);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtTimKhach);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnHD);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
@@ -374,7 +397,6 @@ namespace BTL_Nhom11
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView lvBan;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnHD;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -390,5 +412,8 @@ namespace BTL_Nhom11
         private System.Windows.Forms.ComboBox cbxChuyenBan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTimKhach;
+        private System.Windows.Forms.Button button2;
     }
 }

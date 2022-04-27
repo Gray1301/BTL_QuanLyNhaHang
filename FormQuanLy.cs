@@ -162,20 +162,6 @@ namespace BTL_Nhom11
                 }
                 chart1.Series["Doanh thu"].Points.AddXY(i + "/" + date2, all);
             }
-
-
-            //foreach(var k in dsHoaDon)
-            //{
-            //    MessageBox.Show(k.ngay.ToString());
-            //}
-           
-            //MessageBox.Show(dsHoaDon.ToString());
-            
-            //chart1.Series["Doanh thu"].Points.AddXY(date1 +"/" + date.Month, "55");
-            //chart1.Series["Doanh thu"].Points.AddXY(date1 + 1 + "/" + date.Month, "55");
-            //chart1.Series["Doanh thu"].Points.AddXY(date1 + 2 + "/" + date.Month, "55");
-            //chart1.Series["Doanh thu"].Points.AddXY(date1 + 3 + "/" + date.Month, "55");
-            //chart1.Series["Doanh thu"].Points.AddXY(date1 + 4 + "/" + date.Month, "55");
         }
         private void btnXuat_Click(object sender, EventArgs e)
         {
